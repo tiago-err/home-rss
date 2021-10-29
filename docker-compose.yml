@@ -1,0 +1,12 @@
+version: "3"
+services:
+   home-rss:
+      container_name: home-rss
+      build: ./
+      image: result/latest
+      environment:
+      restart: unless-stopped
+      ports:
+        - 8080:8080
+      environment:
+        - NODE_ENV=development

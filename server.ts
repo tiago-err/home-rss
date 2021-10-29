@@ -1,5 +1,5 @@
 import app from "./index";
-const port = process.env.PORT;
+const port = 80880;
 
 console.log(`Node environment: ${process.env.NODE_ENV}`);
 app.listen(port, () => {
