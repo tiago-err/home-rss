@@ -14,8 +14,8 @@ interface responseType {
 const successResponse = (message: string, payload: Record<string, any>): responseType => {
 	return {
 		status: true,
-		message: message,
-		package: payload,
+		message,
+		payload,
 	};
 };
 
@@ -28,7 +28,7 @@ const successResponse = (message: string, payload: Record<string, any>): respons
 const failResponse = (message: string, payload?: Record<string, any>): responseType => {
 	let response: responseType = {
 		status: false,
-		message: message,
+		message,
 	};
 
 	if (payload) {
