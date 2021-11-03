@@ -1,18 +1,11 @@
 version: "3"
 
 services:
-  home-rss:
-    container_name: home-rss
-    build: ./
-    image: home-rss/latest
-    env_file: ./.env
-    environment:
-    restart: unless-stopped
-    ports:
-      - 8080:8080
-    environment:
-      - NODE_ENV=development
-    volumes: # For Hot Reload
-      - ./:/home-rss
-      - /home-rss/node_modules
-    command: npm run dev
+   home-rss:
+      container_name: home-rss
+      build: ./
+      image: home-rss/latest
+      environment:
+      restart: unless-stopped
+      ports:
+         - 7474:8080
