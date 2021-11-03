@@ -1,5 +1,9 @@
 export const TRASH_DAYS = [
-	undefined,
+	{
+		label: "",
+		label_pt: "",
+		color: "#202124",
+	},
 	{
 		label: "Metal & Plastic",
 		label_pt: "Plástico & Metal",
