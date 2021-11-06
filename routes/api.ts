@@ -14,5 +14,7 @@ export const api = (app: Express) => {
 	app.post("/", validate(indexValidator), IndexController.indexPost);
 
 	app.get("/cinemas", CinemaController.movies);
+	app.get("/cinemas/names", CinemaController.movieNames);
+
 	app.get("/trash", TrashController.trash);
 };

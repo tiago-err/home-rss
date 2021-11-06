@@ -19,3 +19,12 @@ export const movies = async (req: Request, res: Response): Promise<void> => {
 
 	res.send(movies);
 };
+
+export const movieNames = async (req: Request, res: Response): Promise<void> => {
+	const request = await axios.post(GET_MOVIES_URL, {});
+	const data = request.data as {d: IMovieResult[]};
+
+	const movies = data.d.map((movie) => parseMovieResult(movie).name);
+
+	res.send(movies);
+};
