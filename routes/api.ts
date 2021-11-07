@@ -18,6 +18,6 @@ export const api = (app: Express) => {
 
 	app.get("/trash", TrashController.trash);
 	app.get("/day", (req, res) => {
-		res.send({isWeekday: new Date().getDate() != 0 && new Date().getDate() != 6});
+		res.send({isWeekday: new Date().getDate() != 7 && new Date().getDate() != 6});
 	});
 };
