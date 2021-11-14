@@ -10,11 +10,9 @@ import {indexValidator} from "../middlewares/validators/index.validations";
  * @param app
  */
 export const api = (app: Express) => {
-	app.get("/", IndexController.index);
-	app.post("/", validate(indexValidator), IndexController.indexPost);
-
 	app.get("/cinemas", CinemaController.movies);
 	app.get("/cinemas/names", CinemaController.movieNames);
+	app.get("/cinemas/feed", CinemaController.feed);
 
 	app.get("/trash", TrashController.trash);
 	app.get("/day", (req, res) => {
