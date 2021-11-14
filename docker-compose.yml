@@ -5,6 +5,15 @@ services:
       container_name: home-rss
       build: ./
       image: home-rss/latest
+      env_file: ./.env
       restart: unless-stopped
       ports:
          - 7474:8080
+      network_mode: $NETWORK_MODE
+      labels:
+         traefik.enable: $TRAEFIK_ENABLE
+         traefik.http.routers.emby.entrypoints: $TRAEFIK_ENTRYPOINT
+         traefik.http.routers.emby.rule: $TRAEFIK_RULE
+         traefik.http.routers.emby.tls: $TRAEFIK_TLS
+         traefik.http.routers.emby.tls.certresolver: $TRAEFIK_CERT
+         traefik.http.services.emby.loadbalancer.server.port: "7474"
